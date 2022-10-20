@@ -6,7 +6,8 @@ function CountTime({ styles }) {
     const [countTime, setCountTime] = useState(60)
 
 
-    let timeID = useRef()
+    const timeID = useRef()
+    const h1Ref = useRef()
     const startFunc = () => {
 
         if (!timeID.current) {
@@ -21,6 +22,13 @@ function CountTime({ styles }) {
         timeID.current = undefined
     }
 
+    useEffect(() => {
+
+        const rect = h1Ref.current.getBoundingClientRect()
+        console.log(rect)
+        console.log(h1Ref.current)
+    })
+
     return (
 
         <div
@@ -29,7 +37,9 @@ function CountTime({ styles }) {
                 ...styles
             }}
         >
-            <h1>{countTime}</h1>
+            <h1
+                ref={h1Ref}
+            >{countTime}</h1>
             <button
                 onClick={startFunc}
             >Start</button>

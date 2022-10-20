@@ -4,6 +4,7 @@ import Content from "./Content";
 import CountTime from "./CountTime";
 import Timer from "./Timer";
 import ComponentMemo from "./ComponentMemo";
+import Calculator from "./Calculator";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   const [avatar, setAvatar] = useState(false)
   const [countTime, setCountTime] = useState(false)
   const [memo, setMemo] = useState(false)
+  const [calculator, setCalculator] = useState(false)
 
   return (
     <div className="App">
@@ -66,6 +68,16 @@ function App() {
         >
           Memo
         </button>
+		<button
+            onClick={() => setCalculator(!memo)}
+            style={{
+
+				marginLeft: 50,
+				marginTop: 20
+            }}
+        >
+          Calculator
+        </button>
         {
           	toggle && <Content 
 						styles={{
@@ -104,6 +116,15 @@ function App() {
         }
 		{
         	memo && <ComponentMemo
+						styles={{
+
+							marginLeft: 80,
+							marginTop: 40
+						}}
+                    />
+        }
+		{
+        	calculator && <Calculator
 						styles={{
 
 							marginLeft: 80,
