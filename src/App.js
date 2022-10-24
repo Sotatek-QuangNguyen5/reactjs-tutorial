@@ -5,6 +5,8 @@ import CountTime from "./CountTime";
 import Timer from "./Timer";
 import ComponentMemo from "./ComponentMemo";
 import Calculator from "./Calculator";
+import Reducer from "./Reducer";
+import TodoList from "./TodoList";
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
   const [countTime, setCountTime] = useState(false)
   const [memo, setMemo] = useState(false)
   const [calculator, setCalculator] = useState(false)
+  const [reducer, setReducer] = useState(false)
+  const [todo, setTodo] = useState(false)
 
   return (
     <div className="App">
@@ -69,7 +73,7 @@ function App() {
           Memo
         </button>
 		<button
-            onClick={() => setCalculator(!memo)}
+            onClick={() => setCalculator(!calculator)}
             style={{
 
 				marginLeft: 50,
@@ -77,6 +81,26 @@ function App() {
             }}
         >
           Calculator
+        </button>
+		<button
+            onClick={() => setReducer(!reducer)}
+            style={{
+
+				marginLeft: 50,
+				marginTop: 20
+            }}
+        >
+          Reducer
+        </button>
+		<button
+            onClick={() => setTodo(!todo)}
+            style={{
+
+				marginLeft: 50,
+				marginTop: 20
+            }}
+        >
+          TodoList
         </button>
         {
           	toggle && <Content 
@@ -125,6 +149,24 @@ function App() {
         }
 		{
         	calculator && <Calculator
+						styles={{
+
+							marginLeft: 80,
+							marginTop: 40
+						}}
+                    />
+        }
+		{
+        	reducer && <Reducer
+						styles={{
+
+							marginLeft: 80,
+							marginTop: 40
+						}}
+                    />
+        }
+		{
+        	todo && <TodoList
 						styles={{
 
 							marginLeft: 80,
