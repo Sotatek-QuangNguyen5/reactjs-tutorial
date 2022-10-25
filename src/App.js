@@ -9,6 +9,7 @@ import Reducer from "./Reducer";
 import TodoList from "./todo";
 import Context from "./Context";
 import "./App.css"
+import Imperative from "./Imperative";
 
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
   const [reducer, setReducer] = useState(false)
   const [todo, setTodo] = useState(false)
   const [paragraph, setParagraph] = useState(false)
+  const [video, setVideo] = useState(false)
+
+//   const context = useContext(ThemeContext)
+//   console.log('app file', context)
 
   return (
     <div className="App">
@@ -115,6 +120,16 @@ function App() {
         >
           Paragraph
         </button>
+		<button
+            onClick={() => setVideo(!video)}
+            style={{
+
+				marginLeft: 50,
+				marginTop: 20
+            }}
+        >
+          Video
+        </button>
         {
           	toggle && <Content 
 						styles={{
@@ -189,6 +204,15 @@ function App() {
         }
 		{
         	paragraph && <Context
+						styles={{
+
+							marginLeft: 80,
+							marginTop: 40
+						}}
+                    />
+        }
+		{
+        	video && <Imperative
 						styles={{
 
 							marginLeft: 80,
