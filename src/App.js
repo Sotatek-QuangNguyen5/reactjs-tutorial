@@ -7,6 +7,8 @@ import ComponentMemo from "./ComponentMemo";
 import Calculator from "./Calculator";
 import Reducer from "./Reducer";
 import TodoList from "./todo";
+import Context from "./Context";
+import "./App.css"
 
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
   const [calculator, setCalculator] = useState(false)
   const [reducer, setReducer] = useState(false)
   const [todo, setTodo] = useState(false)
+  const [paragraph, setParagraph] = useState(false)
 
   return (
     <div className="App">
@@ -102,6 +105,16 @@ function App() {
         >
           TodoList
         </button>
+		<button
+            onClick={() => setParagraph(!paragraph)}
+            style={{
+
+				marginLeft: 50,
+				marginTop: 20
+            }}
+        >
+          Paragraph
+        </button>
         {
           	toggle && <Content 
 						styles={{
@@ -167,6 +180,15 @@ function App() {
         }
 		{
         	todo && <TodoList
+						styles={{
+
+							marginLeft: 80,
+							marginTop: 40
+						}}
+                    />
+        }
+		{
+        	paragraph && <Context
 						styles={{
 
 							marginLeft: 80,
