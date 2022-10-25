@@ -6,7 +6,7 @@ import Timer from "./Timer";
 import ComponentMemo from "./ComponentMemo";
 import Calculator from "./Calculator";
 import Reducer from "./Reducer";
-import TodoList from "./TodoList";
+import TodoList from "./todo";
 
 
 function App() {
