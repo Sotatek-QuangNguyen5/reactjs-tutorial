@@ -10,6 +10,7 @@ import TodoList from "./todo";
 import Context from "./Context";
 import "./App.css"
 import Imperative from "./Imperative";
+import Page from "./pages/Page";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   const [todo, setTodo] = useState(false)
   const [paragraph, setParagraph] = useState(false)
   const [video, setVideo] = useState(false)
+  const [router, setRouter] = useState(false)
 
 //   const context = useContext(ThemeContext)
 //   console.log('app file', context)
@@ -130,6 +132,16 @@ function App() {
         >
           Video
         </button>
+		<button
+            onClick={() => setRouter(!router)}
+            style={{
+
+				marginLeft: 50,
+				marginTop: 20
+            }}
+        >
+          Router
+        </button>
         {
           	toggle && <Content 
 						styles={{
@@ -213,6 +225,15 @@ function App() {
         }
 		{
         	video && <Imperative
+						styles={{
+
+							marginLeft: 80,
+							marginTop: 40
+						}}
+                    />
+        }
+		{
+        	router && <Page
 						styles={{
 
 							marginLeft: 80,
